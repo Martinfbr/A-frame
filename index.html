@@ -1,0 +1,40 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>TOUR POR COLOMBIA</title>
+    <meta charset="utf-8">
+    <meta name= "viewport" content="width=device−width initial−scale=1">
+    <script src="https://aframe.io/releases/0.6.0/aframe.min.js"></script>
+    <script src="https://code.jquery.com/jquery-1.11.3.js"></script>
+    <style>
+   
+    </style>
+  </head>
+    <body>
+      <a-scene>
+        <a-assets>
+          <img id="imagen1" alt="Bogota" src="./img/andresdc.jpg"/>
+          <img id="imagen2" alt="Cali" src="./img/auditorio.jpg"/>
+          <img id="imagen3" alt="Cano Cristales" src="./img/jaimeduque.jpg"/>
+         
+        </a-assets>
+        <a-image src="#imagen1"  position="1.5 2.3 -3" onclick="show('imagen1')"></a-image>
+        <a-image src="#imagen2" position="0.5 2.3 -3" onclick="show('imagen2')"></a-image>
+        <a-image src="#imagen3" position="2.5 2.3 -3" onclick="show('imagen3')"></a-image>
+
+        <a-sky src="#imagen3" id="fondo"></a-sky>
+          <a-camera>
+            <a-cursor color="white"></a-cursor>
+          </a-camera>
+      </a-scene> 
+      <script> 
+ 
+      function show (id){
+        var valor = $('#'+id).attr("alt");
+        document.getElementById('fondo').setAttribute('src','#' + id);
+     
+      }
+      </script>
+    </body>
+</html>
